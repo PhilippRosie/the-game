@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom"; // Link instead of a
-
-import React from "react"; // react
-import "../styles/navbar.css"; //navbar
+import { Link } from "react-router-dom";
+import React from "react";
+import "../styles/navbar.css";
 import "../pages/Login";
 import "../pages/Logout";
 import "../pages/game";
