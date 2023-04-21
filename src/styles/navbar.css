@@ -1,13 +1,12 @@
-/*Header START*/
-
 .logo {
   font-size: 32px;
 }
 
 header {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 0 2rem;
 }
 
@@ -19,5 +18,6 @@ nav a {
 }
 
 nav a:hover {
+  text-shadow: 0 0 15px red;
   transition: 1s;
 }

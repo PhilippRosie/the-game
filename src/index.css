@@ -8,11 +8,15 @@
 }
 
 :root {
-  --mainColor: rgb(92, 92, 92);
-  --mainColortrans: rgba(56, 56, 56, 0.493);
-  --mainColorLight: rgb(160, 160, 160);
+  --mainColorDark: rgb(92, 92, 92);
+  --mainColorTrans: rgba(92, 92, 92, 0.493);
+  --mainColorLight: rgb(218, 218, 218);
   --secondaryColor: rgb(29, 29, 29);
   --secTransColor: rgba(75, 75, 75, 0.521);
   --textColor: #eee;
   --darkTextColor: #0f0f0f;
+}
+
+body {
+  background-color: var(--mainColorLight);
 }

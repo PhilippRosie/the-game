@@ -13,7 +13,6 @@ function App() {
 
       <div className="page-route">
         {" "}
-        {/* put my routes in a div to only update the div and not the whole site. */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
