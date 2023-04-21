@@ -1,0 +1,23 @@
+/*Header START*/
+
+.logo {
+  font-size: 32px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+nav a {
+  font-size: 22px;
+  margin: 0 2rem;
+  color: var(--darkTextColor);
+  text-decoration: none;
+}
+
+nav a:hover {
+  transition: 1s;
+}
