@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Modal from "./components/modal";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Profile from "./pages/profile";
 import Game from "./pages/game";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         {" "}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/game" element={<Game />} />
         </Routes>
       </div>
