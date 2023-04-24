@@ -12,7 +12,6 @@ function App() {
       <Navbar />
       <Modal />
       <div className="page-route">
-        {" "}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
