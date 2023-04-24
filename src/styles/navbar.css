@@ -25,12 +25,16 @@ nav a {
   margin: 0 2rem;
   color: var(--lightTextColor);
   text-decoration: none;
+  transition: 0.5s;
 }
 
 nav a:hover {
-  border: 2px solid white;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 5px;
-  box-shadow: 0 0 10px red, inset 0 0 5px red;
+  color: black;
+  text-shadow: 2px 2px 5px black;
+  box-shadow: 0 0 10px red, inset 0 0 5px rgb(0, 0, 0), inset 0 0 10px black;
+  background-color: red;
   transition: 0.5s;
   padding: 5px;
 }
