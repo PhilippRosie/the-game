@@ -18,7 +18,7 @@ video {
   align-items: center;
   height: 100vh;
   position: absolute;
-  top: 4%;
+  top: 0%;
 }
 canvas {
   outline: 1px solid;
@@ -29,4 +29,6 @@ canvas {
   box-shadow: 0 0 10px rgb(175, 0, 0), 0 0 20px red,
     inset 0 0 10px rgb(190, 0, 0), inset 0 0 20px red,
     inset 0 0 30px rgb(255, 54, 54);
+  position: absolute;
+  bottom: 10%;
 }
