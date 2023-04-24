@@ -2,8 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  height: 100vh;
 }
 canvas {
   outline: 1px solid;
