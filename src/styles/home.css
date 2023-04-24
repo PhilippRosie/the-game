@@ -1,24 +1,38 @@
-.Game-btn {
-  width: 400px;
-  height: 100px;
-
-  background-color: rgb(179, 255, 0);
-  border: none;
-
-  border-radius: 20px;
-}
-
-.Game-btn a {
-  text-decoration: none;
-  font-size: 22px;
-  font-family: "Press Start 2P", cursive;
-  color: red;
-}
-
 .home-content {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.Game-btn {
+  width: 400px;
+  height: 100px;
+  background: transparent;
+  border: 5px solid black;
+  box-shadow: 0 0 10px red, inset 0 0 10px darkred, inset 0 0 15px red;
+  border-radius: 20px;
+  transition: 1s;
+}
+
+.Game-btn:hover {
+  background: red;
+  box-shadow: 0 0 10px red, inset 0 0 10px rgb(0, 0, 0), inset 0 0 rgb(0, 0, 0);
+  transition: 1s;
+}
+
+.Game-btn a {
+  text-decoration: none;
+  font-size: 22px;
+  font-family: "Press Start 2P", cursive;
+  color: rgb(255, 0, 0);
+  padding: 20%;
+  transition: 1s;
+}
+
+.Game-btn a:hover {
+  color: black;
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+  transition: 1s;
 }
