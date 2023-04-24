@@ -1,5 +1,7 @@
 .logo {
+  padding: 10px;
   color: var(--lightTextColor);
+  font-family: "Press Start 2P", cursive;
   font-size: 32px;
 }
 
