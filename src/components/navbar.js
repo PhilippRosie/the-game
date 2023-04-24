@@ -6,7 +6,7 @@ import "../pages/game";
 export default function Navbar() {
   return (
     <header>
-      <h3 className="logo">OUR GAME</h3>
+      <h3 className="logo">The GAME</h3>
       <nav>
         <Link to="/">Home</Link>
         <Link to="/profile">Profile</Link>
