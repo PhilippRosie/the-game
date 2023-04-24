@@ -1,0 +1,14 @@
+.canvas-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+canvas {
+  outline: 1px solid;
+  border: 2px red solid;
+  border-top: 2px red solid;
+  border-left: 2px red solid;
+  box-shadow: 0 0 10px 0px red;
+  background: black;
+}
