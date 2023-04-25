@@ -31,4 +31,5 @@ canvas {
     inset 0 0 30px rgb(255, 54, 54);
   position: absolute;
   bottom: 10%;
+  background-color: rgba(0, 0, 0, 1);
 }
