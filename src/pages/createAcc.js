@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import ReusableModal from "../components/ReusableModal";
-import "../styles/login.css";
+import "../styles/createAcc.css";
 
-const Login = () => {
+const CreateAcc = () => {
   const [showModal, setShowModal] = useState(false);
   return (
     <div>
-      <button className="loginBtn" onClick={() => setShowModal(true)}>
-        Login
+      <button className=" createAccBtn" onClick={() => setShowModal(true)}>
+        Create Account
       </button>
+
       <ReusableModal show={showModal} onClose={() => setShowModal(false)}>
         <h3>Thihs is a real modal ... heck Yeah!</h3>
-        <p>this is second modal</p>
+        <p>this is first modal</p>
       </ReusableModal>
     </div>
   );
 };
 
-export default Login;
+export default CreateAcc;

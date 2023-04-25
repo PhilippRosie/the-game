@@ -1,4 +1,4 @@
-.loginBtn {
+.createAccBtn {
   font-size: 18px;
   margin: 0 2rem;
   color: var(--lightTextColor);
@@ -12,7 +12,7 @@
   transition: 0.5s;
 }
 
-.loginBtn:hover {
+.createAccBtn:hover {
   border: 2px solid rgb(0, 0, 0);
   border-radius: 5px;
   color: black;

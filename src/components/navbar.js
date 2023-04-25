@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import "../styles/navbar.css";
-import "../pages/login";
 import "../pages/profile";
+import CreateAcc from "../pages/createAcc";
+import Login from "../pages/login";
+
 import "../pages/game";
 export default function Navbar() {
   return (
@@ -14,8 +16,8 @@ export default function Navbar() {
           <Link to="/game">Game</Link>
         </div>
         <div className="user-menu">
-          <Link to="/profile">Profile/Create Acc</Link>
-          <Link to="/login">Login/Logout</Link>
+          <CreateAcc />
+          <Login />
         </div>
       </nav>
     </header>
