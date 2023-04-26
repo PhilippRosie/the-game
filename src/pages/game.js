@@ -103,11 +103,8 @@ class Main extends React.Component {
       .enter()
       .append("div")
       .style("position", "absolute")
-      .style("background", (d, i) => {
-        const wid = 8;
-        const even = Math.floor(i / wid) % 2 === 0;
-        return even ? "white" : "green";
-      })
+      .style("background", `url(${snake})`)
+
       .style("border-radius", "50%")
       .style("width", (d, i) => `${width(i)}px`)
       .style("height", (d, i) => `${width(i)}px`)
