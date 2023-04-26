@@ -6,8 +6,9 @@ import snake from "../img/Snake.jpg";
 
 // create N points such that adjecent nodes are L distance apart
 const createPoints = (N, L) => {
-  let x = 100;
-  let y = 0;
+  //where snake start!
+  let x = 50;
+  let y = 1000;
   const points = [];
   for (let i = 0; i < N; i += 1) {
     points.push({ x, y });
@@ -36,11 +37,13 @@ const satisfyLinkConstraints = (points, L) => {
 
 class Main extends React.Component {
   componentDidMount() {
-    this.N = 100; // points (how many divs)
-    this.L = 10; // gap between divs
+    this.N = 120; // points (how many divs)
+    this.L = 10; // length between divs
     this.points = createPoints(this.N, this.L);
     this.draw();
     this.headAngle = -Math.PI / 2;
+
+    // Movement for mouse!
     document.addEventListener("mousedown", (e) => {
       this.down = true;
       this.updateHead(e.clientX, e.clientY);
@@ -57,6 +60,7 @@ class Main extends React.Component {
       this.moveUp();
     }, 15); // how fast the snake move
 
+    // movement for Arrow keys
     document.addEventListener("keydown", (e) => {
       const k = e.key;
       if (k === "ArrowLeft") {
@@ -68,6 +72,7 @@ class Main extends React.Component {
     });
   }
 
+  // function to move up.
   moveUp() {
     const [head, ...tail] = this.points;
     const del = 2;
@@ -76,6 +81,7 @@ class Main extends React.Component {
     this.updateHead(x, y);
   }
 
+  //update head for snake
   updateHead(x, y) {
     const [, ...tail] = this.points;
     this.points = [{ x, y }, ...tail];
@@ -83,24 +89,28 @@ class Main extends React.Component {
     this.draw();
   }
 
+  // draw snake // and styles for snake
   draw() {
     const node = select(this.node);
     node.style("position", "relative");
-    const updateSel = node.selectAll("div").data(this.points);
-    const headWidth = 30;
+    // select immediate divs inside node!
+    const updateSel = node.selectAll(":scope > div").data(this.points);
+    const headWidth = 40;
     const tailWidth = 10;
     const noOfChunksForHead = 5;
     const width = (index) => {
       if (index < noOfChunksForHead) {
-        const peakWidth = 10;
-        const bigWidth = 35;
+        const peakWidth = 20;
+        const bigWidth = 45;
         const f = index / (noOfChunksForHead - 1);
         return peakWidth + f * (bigWidth - peakWidth);
       }
       return headWidth + (tailWidth - headWidth) * (index / (this.N - 1));
     };
-    updateSel
+    const sel = updateSel
+      // selection
       .enter()
+      //body
       .append("div")
       .style("position", "absolute")
       .style("background", `url(${snake})`)
@@ -108,9 +118,43 @@ class Main extends React.Component {
       .style("border-radius", "50%")
       .style("width", (d, i) => `${width(i)}px`)
       .style("height", (d, i) => `${width(i)}px`)
-      .merge(updateSel)
+      .merge(updateSel);
+    sel
       .style("left", (d, i) => `${d.x - width(i) / 2}px`)
       .style("top", (d, i) => `${d.y - width(i) / 2}px`);
+
+    const fp = this.points[0];
+
+    sel.each(function (d, i) {
+      if (i !== 3) return;
+      const nd = select(this);
+      const w = 8;
+      const ang = Math.atan2(fp.y - d.y, fp.x - d.x) + Math.PI / 2;
+      nd.style("z-index", 99);
+      nd.html("");
+      nd.style("transform", `rotateZ(${ang}rad)`);
+
+      //eyes
+      nd.append("div")
+        .style("position", "absolute")
+        .style("background", "black")
+
+        .style("border-radius", "50%")
+        .style("left", "10%")
+        .style("top", "10%")
+        .style("width", `${w}px`)
+        .style("height", `${w}px`);
+
+      nd.append("div")
+        .style("position", "absolute")
+        .style("background", "black")
+
+        .style("border-radius", "50%")
+        .style("left", "60%")
+        .style("top", "10%")
+        .style("width", `${w}px`)
+        .style("height", `${w}px`);
+    });
   }
 
   render() {
