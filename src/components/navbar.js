@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import "../styles/navbar.css";
 import "../pages/profile";
-import CreateAcc from "../pages/createAcc";
-import Login from "../pages/login";
+import CreateAcc from "./createAcc";
+import Login from "./login";
 
 import "../pages/game";
+
 export default function Navbar() {
+  const [currentForm, setCurrentForm] = useState("login");
+
+  const toogleForm = (forName) => {
+    setCurrentForm(forName);
+  };
+
   return (
     <header>
       <h3 className="logo">The GAME.</h3>
@@ -16,8 +23,11 @@ export default function Navbar() {
           <Link to="/game">Game</Link>
         </div>
         <div className="user-menu">
-          <CreateAcc />
-          <Login />
+          {currentForm === "login" ? (
+            <Login onFormSwitch={toogleForm} />
+          ) : (
+            <CreateAcc onFormSwitch={toogleForm} />
+          )}
         </div>
       </nav>
     </header>

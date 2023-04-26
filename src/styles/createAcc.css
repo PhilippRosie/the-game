@@ -22,3 +22,67 @@
   transition: 0.5s;
   padding: 5px;
 }
+
+.form-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+  font-size: 48px;
+  font-family: "Alumni Sans", sans-serif;
+  color: black;
+  text-shadow: 0 0 3px red;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  padding: 10px;
+  font-family: "Alumni Sans", sans-serif;
+}
+
+input {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Alumni Sans", sans-serif;
+  letter-spacing: 2px;
+}
+
+input:focus::placeholder {
+  color: red;
+}
+
+.submitBtn {
+  width: 60%;
+  height: 40px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: "Alumni Sans", sans-serif;
+  color: rgb(146, 0, 0);
+  background-color: black;
+  text-shadow: 0 0 1px black, 0 0 2px red;
+  box-shadow: 0 0 5px darkred, 0 0 10px red, inset 0 0 5px darkred,
+    inset 0 0 10px red;
+}
+
+.reg-login-btn {
+  width: 60%;
+  border: none;
+  border-radius: 5px;
+}
