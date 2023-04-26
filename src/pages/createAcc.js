@@ -12,7 +12,7 @@ const CreateAcc = () => {
 
       <ReusableModal show={showModal} onClose={() => setShowModal(false)}>
         <h3>Thihs is a real modal ... heck Yeah!</h3>
-        <p>this is first modal</p>
+        <p>This Is The FIRST Modal</p>
       </ReusableModal>
     </div>
   );

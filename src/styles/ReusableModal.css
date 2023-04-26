@@ -50,6 +50,14 @@
   top: 10px;
   right: 10px;
   cursor: pointer;
+  transition: 0.5s;
+}
+
+.closeBtn:hover {
+  color: black;
+  text-shadow: 0 0 3px red;
+  transition: 0.5s;
+  transform: scale(1.2);
 }
 
 @media screen and (max-width: 750px) {

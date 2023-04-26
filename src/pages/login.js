@@ -10,8 +10,8 @@ const Login = () => {
         Login
       </button>
       <ReusableModal show={showModal} onClose={() => setShowModal(false)}>
-        <h3>Thihs is a real modal ... heck Yeah!</h3>
-        <p>this is second modal</p>
+        <h3>Thihs is a real modal ... Heck Yeah!</h3>
+        <p>This Is SECOND Modal</p>
       </ReusableModal>
     </div>
   );
