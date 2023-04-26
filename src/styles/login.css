@@ -60,6 +60,13 @@ input {
   border-radius: 5px;
   font-family: "Alumni Sans", sans-serif;
   letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+input:hover {
+  transition: 0.5s;
+  background-color: lightgrey;
 }
 
 input:focus::placeholder {
@@ -76,6 +83,13 @@ input:focus::placeholder {
   font-family: "Alumni Sans", sans-serif;
   color: rgb(146, 0, 0);
   background-color: black;
+  box-shadow: 0 0 5px darkred, 0 0 10px red, inset 0 0 5px darkred;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.submitBtn:hover {
+  transition: 0.5s;
   text-shadow: 0 0 1px black, 0 0 2px red;
   box-shadow: 0 0 5px darkred, 0 0 10px red, inset 0 0 5px darkred,
     inset 0 0 10px red;
@@ -91,4 +105,5 @@ input:focus::placeholder {
   font-size: 16px;
   font-family: "Alumni Sans", sans-serif;
   letter-spacing: 2px;
+  cursor: pointer;
 }
