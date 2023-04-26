@@ -80,3 +80,15 @@ input:focus::placeholder {
   box-shadow: 0 0 5px darkred, 0 0 10px red, inset 0 0 5px darkred,
     inset 0 0 10px red;
 }
+
+.reg-login-btn {
+  width: 60%;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  color: white;
+  text-decoration: underline;
+  font-size: 16px;
+  font-family: "Alumni Sans", sans-serif;
+  letter-spacing: 2px;
+}
