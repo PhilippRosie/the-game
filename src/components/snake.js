@@ -1,5 +1,5 @@
 import React from "react";
-import { index, select } from "d3";
+import { select } from "d3";
 import "../styles/snake.css";
 
 import snake from "../img/Snake.jpg";
@@ -74,7 +74,7 @@ class Snake extends React.Component {
 
   // function to move up.
   moveUp() {
-    const [head, ...tail] = this.points;
+    const [head] = this.points;
     const del = 2;
     const x = head.x + del * Math.cos(this.headAngle);
     const y = head.y + del * Math.sin(this.headAngle);
