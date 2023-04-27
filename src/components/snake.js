@@ -108,6 +108,7 @@ class Snake extends React.Component {
     // Check if the new head position is outside the game window
     const dx = newHead.x;
     const dy = newHead.y;
+    // Where snake is colliding
     const left = 0;
     const right = window.innerWidth;
     const top = 0;
@@ -169,6 +170,7 @@ class Snake extends React.Component {
 
     const fp = this.points[0];
 
+    // Eye divs
     sel.each(function (d, i) {
       if (i !== 3) return; // div 3
       const nd = select(this);
