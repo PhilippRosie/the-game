@@ -1,5 +1,6 @@
-.game-map {
+.game-body {
   position: relative;
-  width: 1000px;
-  height: 1000px;
+  width: 800px;
+  height: 100vh;
+  background-color: gray;
 }
