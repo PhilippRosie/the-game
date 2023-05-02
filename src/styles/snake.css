@@ -1,0 +1,8 @@
+.snake-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 31, 0, 0.295);
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+}

@@ -7,8 +7,8 @@ import snake from "../img/Snake.jpg";
 // create N points such that adjecent nodes are L distance apart
 const createPoints = (N, L) => {
   //where snake start!
-  let x = 50;
-  let y = 1000;
+  let x = 500;
+  let y = 500;
   const points = [];
   for (let i = 0; i < N; i += 1) {
     points.push({ x, y });
@@ -37,7 +37,7 @@ const satisfyLinkConstraints = (points, L) => {
 
 class Snake extends React.Component {
   componentDidMount() {
-    this.N = 120; // points (how many divs)
+    this.N = 50; // points (how many divs)
     this.L = 10; // length between divs
     this.points = createPoints(this.N, this.L);
     this.draw();
@@ -58,7 +58,7 @@ class Snake extends React.Component {
 
     setInterval(() => {
       this.moveUp();
-    }, 15); // how fast the snake move
+    }, 15);
 
     // movement for Arrow keys
     document.addEventListener("keydown", (e) => {
@@ -74,7 +74,7 @@ class Snake extends React.Component {
 
   // function to move up.
   moveUp() {
-    const [head] = this.points;
+    const [head, ...tail] = this.points;
     const del = 2;
     const x = head.x + del * Math.cos(this.headAngle);
     const y = head.y + del * Math.sin(this.headAngle);
@@ -83,16 +83,42 @@ class Snake extends React.Component {
 
   //update head for snake
   updateHead(x, y) {
-    const [, ...tail] = this.points;
-    this.points = [{ x, y }, ...tail];
+    const [head, ...tail] = this.points;
+    const newHead = { x, y };
+    for (let i = 1; i < this.points.length; i++) {
+      if (this.detectCollision(newHead)) {
+        // collision detected, handle game over logic
+        console.log("collision detected! GAME OVER");
+        return;
+      }
+    }
+    this.points = [newHead, ...tail];
     this.points = satisfyLinkConstraints(this.points, this.L);
     this.draw();
+  }
+
+  detectCollision(newHead) {
+    // Check if the new head position is outside the game window
+    const dx = newHead.x;
+    const dy = newHead.y;
+    // Where snake is colliding
+    const left = 0;
+    const right = window.innerWidth;
+    const top = 0;
+    const bottom = window.innerHeight;
+    if (dx < left || dx > right || dy < top || dy > bottom) {
+      return true;
+    }
+
+    // No collision detected
+    return false;
   }
 
   // draw snake // and styles for snake
   draw() {
     const node = select(this.node);
     node.style("position", "relative");
+
     // select immediate divs inside node!
     const updateSel = node.selectAll(":scope > div").data(this.points);
     const headWidth = 40;
@@ -125,6 +151,7 @@ class Snake extends React.Component {
 
     const fp = this.points[0];
 
+    // Eye divs
     sel.each(function (d, i) {
       if (i !== 3) return; // div 3
       const nd = select(this);
@@ -158,7 +185,11 @@ class Snake extends React.Component {
   }
 
   render() {
-    return <div ref={(node) => (this.node = node)}></div>;
+    return (
+      <div className="snake-container" ref={this.containerRef}>
+        <div ref={(node) => (this.node = node)}></div>
+      </div>
+    );
   }
 }
 export default Snake;
