@@ -6,7 +6,11 @@ import Snake from "../components/snake";
 
 class Game extends React.Component {
   render() {
-    return <Snake />;
+    return (
+      <Canvas>
+        <Snake />
+      </Canvas>
+    );
   }
 }
 
