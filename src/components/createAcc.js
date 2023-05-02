@@ -17,7 +17,7 @@ const CreateAcc = (props) => {
 
   const handleSubmit = async () => {
     const user = await axios
-      .get("/users")
+      .get("http://localhost:6001/users")
       .then((res) => checkEmail(res.data, email));
     if (user) {
       alert("User already exist!");
