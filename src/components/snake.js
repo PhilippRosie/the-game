@@ -99,7 +99,7 @@ class Snake extends React.Component {
 
   detectCollision(newHead) {
     // Check if the new head position is outside the game window
-    const dx = newHead.x;
+    const dx = newHead.x; // detect x and y
     const dy = newHead.y;
     // Where snake is colliding
     const left = 0;
@@ -185,11 +185,7 @@ class Snake extends React.Component {
   }
 
   render() {
-    return (
-      <div className="snake-container" ref={this.containerRef}>
-        <div ref={(node) => (this.node = node)}></div>
-      </div>
-    );
+    return <div ref={(node) => (this.node = node)}></div>;
   }
 }
 export default Snake;

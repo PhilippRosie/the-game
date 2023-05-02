@@ -3,5 +3,9 @@ import "../styles/game.css";
 import Snake from "../components/snake";
 
 export default function game() {
-  return <Snake />;
+  return (
+    <div className="snake-container">
+      <Snake />{" "}
+    </div>
+  );
 }
