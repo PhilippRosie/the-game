@@ -15,7 +15,8 @@ const CreateAcc = (props) => {
     if (user) return user;
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const user = await axios
       .get("http://localhost:6001/users")
       .then((res) => checkEmail(res.data, email));
@@ -23,7 +24,9 @@ const CreateAcc = (props) => {
       alert("User already exist!");
     } else {
       const user = { username, email, pass };
-      axios.post("/users", user).then(alert("User Created!"));
+      axios
+        .post("http://localhost:6001/users", user)
+        .then(alert("User Created!"));
     }
   };
 
