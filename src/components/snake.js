@@ -86,7 +86,7 @@ class Snake extends React.Component {
     const [head, ...tail] = this.points;
     const newHead = { x, y };
     for (let i = 1; i < this.points.length; i++) {
-      if (this.detectCollision(newHead, this.points[i])) {
+      if (this.detectCollision(newHead)) {
         // collision detected, handle game over logic
         console.log("collision detected! GAME OVER");
         return;
@@ -96,13 +96,6 @@ class Snake extends React.Component {
     this.points = satisfyLinkConstraints(this.points, this.L);
     this.draw();
   }
-
-  //detectCollision(point1, point2) {
-  //const dx = point1.x - point2.x;
-  //const dy = point1.y - point2.y;
-  //const distance = Math.hypot(dx, dy);
-  //return distance < this.L;
-  //}
 
   detectCollision(newHead) {
     // Check if the new head position is outside the game window
@@ -115,18 +108,6 @@ class Snake extends React.Component {
     const bottom = window.innerHeight;
     if (dx < left || dx > right || dy < top || dy > bottom) {
       return true;
-    }
-
-    // Check if the new head position collides with the snake's body
-    for (let i = 1; i < this.points.length; i++) {
-      const bodyPart = this.points[i];
-      const distance = Math.hypot(
-        newHead.x - bodyPart.x,
-        newHead.y - bodyPart.y
-      );
-      if (distance < this.L) {
-        return true;
-      }
     }
 
     // No collision detected
