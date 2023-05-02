@@ -1,17 +1,30 @@
 import React, { useState } from "react";
+import axios from "axios";
 import ReusableModal from "./ReusableModal";
 import "../styles/createAcc.css";
 
 const CreateAcc = (props) => {
   const [showModal, setShowModal] = useState(false);
 
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(email);
+  const checkEmail = (users) => {
+    const user = users.find((user) => user.email === email);
+    if (user) return user;
+  };
+
+  const handleSubmit = async () => {
+    const user = await axios
+      .get("/users")
+      .then((res) => checkEmail(res.data, email));
+    if (user) {
+      alert("User already exist!");
+    } else {
+      const user = { username, email, pass };
+      axios.post("/users", user).then(alert("User Created!"));
+    }
   };
 
   return (
@@ -21,14 +34,14 @@ const CreateAcc = (props) => {
       </button>
       <div className="auth-form-container">
         <ReusableModal show={showModal} onClose={() => setShowModal(false)}>
-          <form className="form-container" onSubmit={handleSubmit}>
+          <form className="form-container-createacc" onSubmit={handleSubmit}>
             <h2>Create Account</h2>
             <label htmlFor="name" id="label" className="label">
               Your Name:
             </label>
             <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               type="name"
               id="name"
               className="input"
@@ -59,8 +72,8 @@ const CreateAcc = (props) => {
               required
               placeholder="*********"
             />
-            <button type="submit" className="submitBtn">
-              Login
+            <button type="submit" className="submitBtn" onClick={handleSubmit}>
+              Register!
             </button>
           </form>
           <button

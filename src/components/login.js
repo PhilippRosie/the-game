@@ -20,7 +20,7 @@ const Login = (props) => {
       </button>
       <div className="auth-form-container">
         <ReusableModal show={showModal} onClose={() => setShowModal(false)}>
-          <form className="form-container" onSubmit={handleSubmit}>
+          <form className="form-container-login" onSubmit={handleSubmit}>
             <h2>Login</h2>
             <label htmlFor="email" id="label" className="label">
               Your Email:
@@ -46,7 +46,11 @@ const Login = (props) => {
               required
               placeholder="*********"
             />
-            <button type="submit" className="submitBtn">
+            <button
+              disabled={!email || !pass}
+              type="submit"
+              className="submitBtn"
+            >
               Login
             </button>
           </form>
