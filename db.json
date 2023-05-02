@@ -1,6 +1,12 @@
 {
-  "users": [],
-
+  "users": [
+    {
+      "username": "philipp",
+      "email": "philippderosie@gmail.com",
+      "pass": "test123",
+      "id": 1
+    }
+  ],
   "posts": [
     {
       "id": 1,
