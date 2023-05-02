@@ -1,11 +1,13 @@
 import React from "react";
 import "../styles/game.css";
+
+import Canvas from "../components/canvas";
 import Snake from "../components/snake";
 
-export default function game() {
-  return (
-    <div className="snake-container">
-      <Snake />{" "}
-    </div>
-  );
+class Game extends React.Component {
+  render() {
+    return <Snake />;
+  }
 }
+
+export default Game;
