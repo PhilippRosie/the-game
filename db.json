@@ -5,6 +5,12 @@
       "email": "philippderosie@gmail.com",
       "pass": "test123",
       "id": 1
+    },
+    {
+      "username": "bla",
+      "email": "blabla@gmial.com",
+      "pass": "bla123",
+      "id": 2
     }
   ],
   "posts": [
