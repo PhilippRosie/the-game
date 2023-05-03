@@ -72,10 +72,10 @@ class Game extends React.Component {
       if (this.state.route === "game") {
         switch (this.state.direction) {
           case "RIGHT":
-            head = [head[0] + 2, head[1]];
+            head = [head[0] + 1, head[1]];
             break;
           case "LEFT":
-            head = [head[0] - 2, head[1]];
+            head = [head[0] - 1, head[1]];
             break;
           case "DOWN":
             head = [head[0], head[1] + 2];
@@ -117,7 +117,11 @@ class Game extends React.Component {
   onSnakeEats() {
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
     let food = this.state.food;
-    if (head[0] == food[0] && head[1] == food[1]) {
+    let distance = 2; // collision area
+    if (
+      Math.abs(head[0] - food[0]) <= distance &&
+      Math.abs(head[1] - food[1]) <= distance
+    ) {
       this.setState({
         food: getRandomFood(),
       });

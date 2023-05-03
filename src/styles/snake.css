@@ -1,0 +1,12 @@
+.snake {
+  position: absolute;
+  width: 32px;
+  height: 12px;
+  border-radius: 20%;
+  background-color: rgb(1, 65, 1);
+  z-index: 1;
+}
+
+.head {
+  background-color: rgb(255, 0, 0);
+}
