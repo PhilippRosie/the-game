@@ -1,15 +1,17 @@
 import React from "react";
 import "../styles/game.css";
 
-import Canvas from "../components/canvas";
 import Snake from "../components/snake";
+import Food from "../components/Food";
+
+import Menu from "../components/gameMenu";
 
 class Game extends React.Component {
   render() {
     return (
-      <Canvas>
-        <Snake />
-      </Canvas>
+      <div>
+        <Snake />,<Food />,<Menu />
+      </div>
     );
   }
 }
