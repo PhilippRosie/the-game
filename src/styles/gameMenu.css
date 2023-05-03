@@ -1,0 +1,25 @@
+.game__menu {
+  position: relative;
+  width: 200px;
+  height: 250px;
+
+  /* border-radius: 10px; */
+  margin: 50px auto;
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px #abbfc0;
+}
+
+.start__button {
+  width: 150px;
+  background: #1e1e1e;
+  color: white;
+  border-radius: 7px;
+  border: 0px;
+  padding: 10px;
+  font-size: 1.2em;
+  box-shadow: 0 0 70px #b80000;
+  font-family: "Courier New", Courier, monospace;
+}

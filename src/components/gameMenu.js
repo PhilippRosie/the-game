@@ -1,6 +1,19 @@
 import React from "react";
 import "../styles/gameMenu.css";
 
-export default function gameMenu() {
-  return <div></div>;
-}
+const Menu = ({ onRouteChange }) => {
+  return (
+    <div className="game__menu">
+      <div>
+        <input
+          onClick={onRouteChange}
+          className="start__button"
+          type="button"
+          value="start game"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Menu;
