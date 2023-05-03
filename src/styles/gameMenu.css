@@ -1,3 +1,14 @@
+.game-Titel {
+  text-align: center;
+  background-color: #000000;
+  background-image: linear-gradient(100deg, #000000, #ff000048, #000000);
+  background-size: 100%;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-shadow: 0 0 2px white;
+  font-size: 42px;
+}
+
 .game__menu {
   position: relative;
   width: 200px;
@@ -12,8 +23,9 @@
 }
 
 .start__button {
-  width: 150px;
-  background: #1e1e1e;
+  width: 350px;
+  height: 100px;
+  background: #ff000011;
   color: white;
   border-radius: 7px;
 
@@ -21,4 +33,12 @@
   font-size: 1.2em;
   box-shadow: 0 0 70px #b80000;
   font-family: "Courier New", Courier, monospace;
+  font-weight: 800;
+}
+
+.start__button:hover {
+  background-color: rgba(68, 255, 0, 0.356);
+  box-shadow: 0 0 70px rgb(68, 255, 0);
+  color: black;
+  font-weight: 800;
 }

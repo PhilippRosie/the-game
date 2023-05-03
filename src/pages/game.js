@@ -162,7 +162,7 @@ class Game extends React.Component {
     return (
       <div>
         <div>
-          <h1 className="game-Titel">Welcome</h1>
+          <h1 className="game-Titel">You know what to do</h1>
         </div>
         {route === "menu" ? (
           <div>
