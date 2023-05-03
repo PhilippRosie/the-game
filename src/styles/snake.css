@@ -9,6 +9,5 @@
 }
 
 .head {
-  background-image: url(../img/Snake.jpg);
-  transform-origin: center;
+  background-color: rgb(0, 255, 13);
 }
