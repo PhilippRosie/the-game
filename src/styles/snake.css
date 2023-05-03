@@ -2,11 +2,13 @@
   position: absolute;
   width: 22px;
   height: 12px;
-  border-radius: 20%;
-  background-color: rgb(1, 65, 1);
+  border-radius: 50%;
+  background-image: url(../img/Snake.jpg);
   z-index: 1;
+  transition: all 0.1s;
 }
 
 .head {
-  background-color: rgb(255, 0, 0);
+  background-image: url(../img/Snake.jpg);
+  transform-origin: center;
 }
