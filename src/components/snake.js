@@ -2,7 +2,7 @@ import snakeTexture from "../img/Snake.jpg";
 import "../styles/snake.css";
 
 const Snake = ({ snakeDots }) => {
-  const headWidth = 50; // define head width
+  const headWidth = 40; // define head width
   const tailWidth = 30; // define tail width
   const widthDiff = (headWidth - tailWidth) / (snakeDots.length - 1); // calculate the width difference between each segment
   return (
