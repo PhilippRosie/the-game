@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ReusableModal from "./ReusableModal";
+import axios from "axios";
 import "../styles/login.css";
 
 const Login = (props) => {
@@ -8,9 +10,37 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const checkUser = (users) => {
+    const user = users.find(
+      (user) => user.email === email && user.pass === pass
+    );
+    console.log(user);
+    if (user.email === email && user.pass === pass) return user;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email);
+
+    if (email === "" || pass === "") {
+      alert("All Fields are required!");
+    }
+
+    const user = await axios
+      .get("http://localhost:6001/users")
+      .then((res) => checkUser(res.data, email, pass))
+      .catch((error) => {
+        console.log(error);
+      });
+
+    if (user.email === email && user.pass === pass) {
+      navigate("/");
+
+      localStorage.setItem("user", JSON.stringify(user.id));
+    }
+    setEmail("");
+    setPass("");
   };
 
   return (
@@ -46,11 +76,7 @@ const Login = (props) => {
               required
               placeholder="*********"
             />
-            <button
-              disabled={!email || !pass}
-              type="submit"
-              className="submitBtn"
-            >
+            <button type="submit" className="submitBtn" onClick={handleSubmit}>
               Login
             </button>
           </form>
