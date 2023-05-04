@@ -1,5 +1,6 @@
 .loginBtn {
-  font-size: 18px;
+  font-size: 16px;
+  font-family: "Press Start 2P", cursive;
   margin: 0 2rem;
   color: var(--lightTextColor);
   text-decoration: none;
