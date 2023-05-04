@@ -3,7 +3,6 @@ import "../styles/game.css";
 
 import Snake from "../components/snake";
 import Food from "../components/Food";
-
 import Menu from "../components/gameMenu";
 
 const getRandomFood = () => {
@@ -20,6 +19,7 @@ const initialState = {
   speed: 50,
   route: "menu",
   snakeDots: [
+    //Starting snakeDots
     [0, 0],
     [0, 2],
     [0, 4],
@@ -103,7 +103,7 @@ class Game extends React.Component {
   onSnakeOutOfBounds() {
     let head = this.state.snakeDots[this.state.snakeDots.length - 1];
     if (this.state.route === "game") {
-      if (head[0] >= 100 || head[1] >= 100 || head[0] < 0 || head[1] < 0) {
+      if (head[0] >= 99 || head[1] >= 97 || head[0] < 0 || head[1] < 0) {
         this.gameOver();
       }
     }
@@ -138,7 +138,7 @@ class Game extends React.Component {
 
   increaseSnake() {
     let newSnake = [...this.state.snakeDots];
-    newSnake.unshift([], []);
+    newSnake.unshift([]);
     this.setState({
       snakeDots: newSnake,
     });
@@ -159,7 +159,7 @@ class Game extends React.Component {
   };
 
   gameOver() {
-    alert(`GAME OVER, your score is ${this.state.snakeDots.length - 2}`);
+    alert(`GAME OVER, your score is ${this.state.snakeDots.length - 8}`);
     this.setState(initialState);
   }
 
@@ -168,7 +168,7 @@ class Game extends React.Component {
     return (
       <div>
         <div>
-          <h1 className="game-Titel">You know what to do</h1>
+          <h1 className="game-Titel">The Game</h1>
         </div>
         {route === "menu" ? (
           <div>
