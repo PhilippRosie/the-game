@@ -41,6 +41,7 @@ const Login = (props) => {
     }
     setEmail("");
     setPass("");
+    setShowModal(false);
   };
 
   return (
