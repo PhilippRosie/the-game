@@ -101,9 +101,20 @@ class Game extends React.Component {
   };
 
   onSnakeOutOfBounds() {
-    let head = this.state.snakeDots[this.state.snakeDots.length - 1];
+    // Get the coordinates of the snake's head
+    let [headX, headY] = this.state.snakeDots[this.state.snakeDots.length - 2];
+
+    // Check if the game route is active
     if (this.state.route === "game") {
-      if (head[0] >= 99 || head[1] >= 97 || head[0] < 0 || head[1] < 0) {
+      // Check if the head has collided with any of the game boundaries
+      if (
+        headX >= 98.5 || // Check if head has reached or exceeded the right boundary
+        headY >= 96.5 || // Check if head has reached or exceeded the bottom boundary
+        headX < 0 || // Check if head has reached or gone below the left boundary
+        headY < 0
+      ) {
+        // Check if head has reached or gone above the top boundary
+        // If the head has collided with any of the boundaries, the game is over
         this.gameOver();
       }
     }
