@@ -167,8 +167,8 @@ class Game extends React.Component {
     const { route, snakeDots, food } = this.state;
     return (
       <div>
-        <div>
-          <h1 className="game-Titel">The Game</h1>
+        <div className="game-Titel">
+          <h1>The Game</h1>
         </div>
         {route === "menu" ? (
           <div>

@@ -8,8 +8,10 @@ import Game from "./pages/game";
 
 function App() {
   return (
+    // where i learn the route https://www.youtube.com/watch?v=SLfhMt5OUPI&t=358s
     <>
       <Navbar />
+
       <div className="page-route">
         <Routes>
           <Route path="/" element={<Home />} />
