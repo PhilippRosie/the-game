@@ -72,7 +72,7 @@ input:focus::placeholder {
   color: red;
 }
 
-.submitBtn {
+.submitBtn-login {
   width: 60%;
   height: 40px;
   margin-top: 10px;
@@ -87,14 +87,14 @@ input:focus::placeholder {
   transition: 0.5s;
 }
 
-.submitBtn:hover {
+.submitBtn-login:hover {
   transition: 0.5s;
   text-shadow: 0 0 1px black, 0 0 2px red;
   box-shadow: 0 0 5px darkred, 0 0 10px red, inset 0 0 5px darkred,
     inset 0 0 10px red;
 }
 
-.reg-login-btn {
+.reg-createacc-btn {
   width: 60%;
   border: none;
   border-radius: 5px;

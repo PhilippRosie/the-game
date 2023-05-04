@@ -35,7 +35,7 @@ const Login = (props) => {
       });
 
     if (user.email === email && user.pass === pass) {
-      navigate("/");
+      navigate("/game");
 
       localStorage.setItem("user", JSON.stringify(user.id));
     }
@@ -48,7 +48,7 @@ const Login = (props) => {
       <button className="loginBtn" onClick={() => setShowModal(true)}>
         Login
       </button>
-      <div className="auth-form-container">
+      <div className="auth-form-container-login">
         <ReusableModal show={showModal} onClose={() => setShowModal(false)}>
           <form className="form-container-login" onSubmit={handleSubmit}>
             <h2>Login</h2>
@@ -76,14 +76,20 @@ const Login = (props) => {
               required
               placeholder="*********"
             />
-            <button type="submit" className="submitBtn" onClick={handleSubmit}>
+            <button
+              type="submit"
+              className="submitBtn-login"
+              onClick={handleSubmit}
+            >
               Login
             </button>
           </form>
           <button
-            className="reg-login-btn"
+            className="reg-createacc-btn"
             type="regBtn"
-            onClick={() => props.onFormSwitch("createacc")}
+            onClick={() => {
+              props.onFormSwitch("createacc");
+            }}
           >
             Don't have an account? Register here!
           </button>

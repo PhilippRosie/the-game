@@ -36,7 +36,7 @@ const CreateAcc = (props) => {
       <button className=" createAccBtn" onClick={() => setShowModal(true)}>
         Create Account
       </button>
-      <div className="auth-form-container">
+      <div className="auth-form-container-createacc">
         <ReusableModal show={showModal} onClose={() => setShowModal(false)}>
           <form className="form-container-createacc" onSubmit={handleSubmit}>
             <h2>Create Account</h2>
@@ -76,7 +76,11 @@ const CreateAcc = (props) => {
               required
               placeholder="*********"
             />
-            <button type="submit" className="submitBtn" onClick={handleSubmit}>
+            <button
+              type="submit"
+              className="submitBtn-reg"
+              onClick={handleSubmit}
+            >
               Register!
             </button>
           </form>
