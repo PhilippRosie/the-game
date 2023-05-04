@@ -2,20 +2,13 @@ body {
   background-color: #000000;
 }
 
-.game-Titel {
-  text-align: center;
-  color: rgb(255, 0, 0);
-  text-shadow: 0 0 3px white;
-  font-size: 42px;
-}
-
 .game-area {
   position: relative;
   width: 1500px;
   height: 750px;
 
   border-radius: 10px;
-  margin: 200px auto;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   box-shadow: 0 0 10px #ff0000;
