@@ -11,7 +11,8 @@ body {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  box-shadow: 0 0 10px #ff0000;
+  box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, inset 0 0 10px #ffffff,
+    inset 0 0 20px #b90000, inset 0 0 40px #ff0000;
   background-color: rgba(128, 128, 128, 0.055);
 }
 
@@ -35,6 +36,5 @@ body {
   background-image: url("../img/SnakeFood.png");
   background-size: contain;
   background-repeat: no-repeat;
-  border-radius: 50%;
   z-index: 1;
 }
