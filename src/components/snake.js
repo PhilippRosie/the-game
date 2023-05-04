@@ -1,4 +1,3 @@
-import snakeTexture from "../img/Snake.jpg";
 import "../styles/snake.css";
 
 const Snake = ({ snakeDots }) => {
