@@ -1,20 +1,15 @@
 .game-Titel {
   text-align: center;
-  background-color: #000000;
-  background-image: linear-gradient(100deg, #000000, #ff000048, #000000);
-  background-size: 100%;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-  text-shadow: 0 0 2px white;
-  font-size: 42px;
+  font-size: 32px;
+  color: white;
+  text-shadow: 0 0 5px rgb(255, 1, 1);
+  font-family: "Press Start 2P";
 }
 
 .game__menu {
   position: relative;
   width: 200px;
   height: 250px;
-
-  /* border-radius: 10px; */
   margin: 50px auto;
   margin-top: 200px;
   display: flex;
