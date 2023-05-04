@@ -12,6 +12,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+  position: fixed;
 }
 
 nav {
@@ -21,7 +22,8 @@ nav {
 }
 
 nav a {
-  font-size: 22px;
+  font-size: 18px;
+  font-family: "Press Start 2P", cursive;
   margin: 0 2rem;
   color: var(--lightTextColor);
   text-decoration: none;
