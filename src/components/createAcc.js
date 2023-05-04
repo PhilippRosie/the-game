@@ -29,6 +29,9 @@ const CreateAcc = (props) => {
         .post("http://localhost:6001/users", user)
         .then(alert("User Created!"));
     }
+    setEmail("");
+    setPass("");
+    setShowModal(false);
   };
 
   return (
@@ -79,7 +82,10 @@ const CreateAcc = (props) => {
             <button
               type="submit"
               className="submitBtn-reg"
-              onClick={handleSubmit}
+              onClick={() => {
+                handleSubmit();
+                props.onFormSwitch("login");
+              }}
             >
               Register!
             </button>
