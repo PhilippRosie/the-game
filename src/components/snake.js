@@ -2,6 +2,7 @@ import React from "react";
 import { select } from "d3";
 import "../styles/snake.css";
 
+<<<<<<< Updated upstream
 import snake from "../img/Snake.jpg";
 
 // create N points such that adjecent nodes are L distance apart
@@ -15,6 +16,24 @@ const createPoints = (N, L) => {
     y += L;
   }
   return points;
+=======
+const Snake = ({ snakeDots }) => {
+  return (
+    <div>
+      {snakeDots.map((dot, i) => {
+        const style = {
+          left: `${dot[0]}%`, // sets the left position of the body part relative to its head
+          top: `${dot[1]}%`, // sets the top position of the body part relative to its head
+          width: "32px", // set the width of the body part
+          height: "32px", // set the height of the body part
+        };
+        const isHead = i === snakeDots.length - 1;
+        const className = `snake${isHead ? "head" : ""}`;
+        return <div className={className} key={i} style={style} />;
+      })}
+    </div>
+  );
+>>>>>>> Stashed changes
 };
 
 const satisfyLinkConstraints = (points, L) => {
