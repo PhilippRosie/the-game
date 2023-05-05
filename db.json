@@ -1,16 +1,10 @@
 {
   "users": [
     {
-      "username": "philipp",
+      "username": "Philipp",
       "email": "philippderosie@gmail.com",
       "pass": "test123",
       "id": 1
-    },
-    {
-      "username": "noxar",
-      "email": "Lundmark1223@hotmail.se",
-      "pass": "password",
-      "id": 2
     }
   ],
   "posts": [

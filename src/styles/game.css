@@ -1,0 +1,40 @@
+body {
+  background-color: #000000;
+}
+
+.game-area {
+  position: relative;
+  width: 1500px;
+  height: 750px;
+
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, inset 0 0 10px #ffffff,
+    inset 0 0 20px #b90000, inset 0 0 40px #ff0000;
+  background-color: rgba(128, 128, 128, 0.055);
+}
+
+@media only screen and (max-width: 800px) {
+  .game-area {
+    position: relative;
+    width: 450px;
+    height: 300px;
+  }
+
+  .snake {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.food {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/SnakeFood.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}

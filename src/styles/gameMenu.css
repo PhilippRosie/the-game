@@ -1,0 +1,40 @@
+.game-Titel {
+  padding-top: 90px;
+  text-align: center;
+  font-size: 32px;
+  color: white;
+  text-shadow: 0 0 5px rgb(255, 1, 1);
+  font-family: "Press Start 2P";
+}
+
+.game__menu {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  margin: 50px auto;
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start__button {
+  width: 350px;
+  height: 100px;
+  background: #ff000011;
+  color: white;
+  border-radius: 20%;
+
+  padding: 10px;
+  font-size: 1.2em;
+  box-shadow: 0 0 70px #b80000;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 800;
+}
+
+.start__button:hover {
+  background-color: rgba(68, 255, 0, 0.356);
+  box-shadow: 0 0 70px rgb(68, 255, 0);
+  color: black;
+  font-weight: 800;
+}

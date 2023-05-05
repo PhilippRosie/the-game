@@ -27,34 +27,10 @@ const ReusableModal = ({
     onClose();
   };
 
-  const backDrop = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
-
-  const modal = {
-    initial: {
-      opacity: 0,
-      scale: 1,
-    },
-    current: {
-      opacity: 1,
-      scale: 1,
-      transform: { delay: 1 },
-      transistion: { duration: 0.6 },
-    },
-    exit: {
-      opacity: 0,
-      scale: 0,
-      transistion: { duration: 0.6 },
-    },
-  };
-
   return (
     <AnimatePresence>
       {show && (
         <motion.div
-          variants={backDrop}
           initial="hidden"
           animate="visible"
           exit="hidden"
@@ -62,7 +38,6 @@ const ReusableModal = ({
           style={{ ...backdropStyles }}
         >
           <motion.div
-            variants={modal}
             initial="initial"
             animate="current"
             exit="exit"
