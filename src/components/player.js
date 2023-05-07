@@ -1,16 +1,21 @@
-import { useRef, useEffect, useState } from "react";
-import Sprite from "../img/ACharDown.png";
+import React from "react";
 
-export default function Player() {
-  useEffect(() => {
-    const playerImage = new Image();
-    playerImage.src = Sprite;
+const Player = ({ playerImage, canvasRef }) => {
+  const playerPosition = { x: 0, y: 0 };
 
-    playerImage.onload = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(playerImage);
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: playerPosition.y,
+        left: playerPosition.x,
+        width: playerImage.width,
+        height: playerImage.height,
+      }}
+    >
+      <img src={playerImage.src} alt="Player" />
+    </div>
+  );
+};
 
-      setImageLoaded(true);
-    };
-  }, []);
-}
+export default Player;

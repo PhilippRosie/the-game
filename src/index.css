@@ -26,5 +26,5 @@ font-family: 'Press Start 2P', cursive;*/
 
 body {
   background-color: var(--mainColorDark);
-  overflow: hidden;
+  height: 100vh;
 }
