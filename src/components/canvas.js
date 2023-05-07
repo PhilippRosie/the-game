@@ -8,7 +8,7 @@ const Canvas = () => {
   const canvasRef = useRef(null);
   const [playerImage, setPlayerImage] = useState("");
   const [bgImage, setBgImage] = useState("");
-  const [pos, updatePos] = useState({ x: -200, y: -280 });
+  const [pos, updatePos] = useState({ x: 0, y: -200 });
   useEffect(() => {
     const playerImage = new Image();
     playerImage.src = playerSprite;
@@ -30,7 +30,7 @@ const Canvas = () => {
       console.log(pos);
       const canvas = canvasRef.current;
       const ctx = canvas.getContext("2d");
-      ctx.drawImage(bgImage, pos.x, pos.y, canvas.width * 8, canvas.height * 8);
+      ctx.drawImage(bgImage, pos.x, pos.y, canvas.width * 6, canvas.height * 6);
       ctx.drawImage(
         playerImage,
         canvas.width / 2 - playerImage.width / 2,
