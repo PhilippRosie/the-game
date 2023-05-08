@@ -13,4 +13,5 @@
   width: 100px;
   background-color: gray;
   color: white;
+  z-index: -1;
 }
