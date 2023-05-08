@@ -1,21 +1,12 @@
 import React from "react";
+import "../styles/player.css";
+import playerImg from "../img/ACharDown.png";
 
-const Player = ({ playerImage, canvasRef }) => {
-  const playerPosition = { x: 0, y: 0 };
-
+const Player = (props) => {
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: playerPosition.y,
-        left: playerPosition.x,
-        width: playerImage.width,
-        height: playerImage.height,
-      }}
-    >
-      <img src={playerImage.src} alt="Player" />
+    <div className="player-div">
+      <img src={playerImg} alt="player image" />
     </div>
   );
 };
-
 export default Player;

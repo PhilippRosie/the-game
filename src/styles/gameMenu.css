@@ -1,0 +1,16 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: 200px;
+  width: 500px;
+  height: 500px;
+}
+
+.Start-game {
+  width: 100px;
+  background-color: gray;
+  color: white;
+}
