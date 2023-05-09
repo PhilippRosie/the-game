@@ -2,9 +2,5 @@
   position: relative;
 
   transform: translateY(90px);
-  background-color: rgb(206, 206, 206);
-}
-
-.hey {
-  color: #ffa62b;
+  background-color: rgb(15, 15, 15);
 }
