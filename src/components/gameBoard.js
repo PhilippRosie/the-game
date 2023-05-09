@@ -1,27 +1,27 @@
 import React, { useRef, useEffect } from "react";
+import { BallMovement } from "../components/ballMovement";
+import data from "../components/gameData";
+import "../styles/gameBoard.css";
+import BoardCollision from "../components/boardCollision";
 
-let x = 0;
-export default function gameBoard() {
+let { ballObject } = data;
+
+export default function GameBoard() {
   const canvasRef = useRef(null);
-  const ctx = canvas.getContext("2d");
-
   useEffect(() => {
     const render = () => {
       const canvas = canvasRef.current;
       const ctx = canvas.getContext("2d");
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.beginPath();
-      ctx.arc(x, 75, 50, 0, 2);
-      ctx.stroke();
+
+      BallMovement(ctx, ballObject);
+
+      BoardCollision(ballObject, canvas);
+
       requestAnimationFrame(render);
     };
-  }, []);
-
-  useEffect(() => {
-    const render = () => {
-      const canvas = canvasRef.current;
-      const ctx = canvas.getContext("2d");
-    };
+    render();
   }, []);
 
   return (
@@ -29,7 +29,7 @@ export default function gameBoard() {
       ref={canvasRef}
       id="canvas"
       height="500px"
-      width={window - innerWidth - 20}
+      width={window.innerWidth}
     />
   );
 }
