@@ -1,42 +1,30 @@
-import React, { useState, useEffect } from "react";
-import "../styles/player.css";
-import playerImg from "../img/ACharDown.png";
+export default (ctx, canvas, playerProps) => {
+  class Player {
+    constructor(x) {
+      this.x = x;
+      this.y = canvas.height - 30;
+      this.height = 20;
+      this.width = playerProps.width;
+      this.colors = ["red", "blue"];
+    }
 
-const Player = (props) => {
-  const [posX, setposX] = useState(370);
-  const [posY, setposY] = useState(120);
-
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      switch (event.keyCode) {
-        case 37:
-          setposX((x) => x - 3);
-          break;
-        case 38:
-          setposY((y) => y - 3);
-          break;
-        case 39:
-          setposX((x) => x + 3);
-          break;
-        case 40:
-          setposY((y) => y + 3);
-          break;
-        default:
-          break;
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
-  return (
-    <div className="player-div" style={{ left: posX, top: posY }}>
-      <img src={playerImg} alt="player image" />
-    </div>
-  );
+    move() {
+      ctx.beginPath();
+      ctx.rect(this.x, this.y, this.width, this.height);
+      ctx.fillstyle = this.broke ? "white" : this.colors[1];
+      ctx.strokeStyle = this.broke ? "white" : "red";
+      ctx.lineWidth = 1;
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = "black";
+      ctx.strokeRect(this.x, this.y, this.width, this.height);
+      ctx.fill();
+    }
+  }
+  let player = new Player(playerProps.x);
+  player.move();
+  if (playerProps.x <= 0) {
+    playerProps.x = 0;
+  } else if (playerProps.x + playerProps.width >= canvas.width) {
+    playerProps.x = canvas.width - playerProps.width;
+  }
 };
-export default Player;
