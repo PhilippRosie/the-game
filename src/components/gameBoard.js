@@ -9,8 +9,9 @@ export default function gameBoard() {
     const render = () => {
       const canvas = canvasRef.current;
       const ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.beginPath();
-      ctx.arc(100, 75, 50, 0, 2);
+      ctx.arc(x, 75, 50, 0, 2);
       ctx.stroke();
       requestAnimationFrame(render);
     };
