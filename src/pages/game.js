@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../styles/game.css";
 import Menu from "../components/gameMenu";
-import Player from "../components/player";
 
 const initialState = {
   route: "menu",
@@ -29,9 +28,7 @@ class Game extends Component {
           </div>
         ) : (
           <div>
-            <div className="game-board">
-              <Player />
-            </div>
+            <div className="game-board"></div>
           </div>
         )}
       </div>
