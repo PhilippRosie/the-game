@@ -5,6 +5,7 @@ export function BallMovement(ctx, ballObject) {
   ballObject.y += ballObject.dy;
 }
 
+// New ball then draw it out
 class Ball {
   constructor(x, y, rad) {
     this.x = x;
