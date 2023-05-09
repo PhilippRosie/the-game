@@ -5,6 +5,9 @@ import Navbar from "./components/navbar";
 import Home from "./pages/Home";
 import Profile from "./pages/profile";
 import Game from "./pages/game";
+import PrivateRoute from "./components/PrivateRoute";
+import LoginPage from "./pages/loginPage";
+import UserPage from "./pages/userPage";
 
 function App() {
   return (
@@ -17,6 +20,16 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/game" element={<Game />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/userpage" element={<UserPage />} />
+          <Route
+            path="/user"
+            element={
+              <PrivateRoute>
+                <UserPage />
+              </PrivateRoute>
+            }
+          />
         </Routes>
       </div>
     </>

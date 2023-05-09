@@ -35,7 +35,7 @@ const Login = (props) => {
       });
 
     if (user.email === email && user.pass === pass) {
-      navigate("/game");
+      navigate("/userpage");
 
       localStorage.setItem("user", JSON.stringify(user.id));
     }

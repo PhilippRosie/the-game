@@ -3,8 +3,8 @@ import "../styles/gameMenu.css";
 
 const Menu = ({ onRouteChange }) => {
   return (
-    <div className="wrapper">
-      <div>
+    <div className="gameMenuConatiner">
+      <div className="wrapper">
         <input
           className="Start-game"
           onClick={onRouteChange}

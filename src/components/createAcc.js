@@ -82,8 +82,8 @@ const CreateAcc = (props) => {
             <button
               type="submit"
               className="submitBtn-reg"
-              onClick={() => {
-                handleSubmit();
+              onClick={(e) => {
+                handleSubmit(e);
                 props.onFormSwitch("login");
               }}
             >
