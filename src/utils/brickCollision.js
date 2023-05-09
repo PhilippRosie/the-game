@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function brickCollision(ballObject, brick) {
+export default function brickCollision() {
   return <div></div>;
 }

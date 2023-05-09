@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { BallMovement } from "../components/ballMovement";
 import "../styles/gameBoard.css";
 import BoardCollision from "../utils/boardCollision";
+import brickCollision from "../utils/brickCollision";
 import Player from "../components/player";
 import Brick from "../utils/bricks";
 
@@ -51,6 +52,8 @@ export default function GameBoard() {
 
       //ball movement!
       BallMovement(ctx, ballObject);
+
+      //bricks and ball collision
 
       // ball and wall collisions
       BoardCollision(ballObject, canvas);
