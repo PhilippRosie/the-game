@@ -22,15 +22,13 @@ export default function GameBoard() {
     x: 0.5,
     y: 50,
     height: 20,
-    density: 2,
-    colors: ["red", "white"],
+    colors: ["red", "purple"],
   };
 
   let playerProps = {
     height: 20,
     width: 100,
     x: 100,
-    color: "blue",
   };
 
   // render to canvas!
