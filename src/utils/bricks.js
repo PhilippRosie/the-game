@@ -1,5 +1,5 @@
 export default function Brick(level, bricks, canvas, brickObject) {
-  brickObject.width = canvas.width / 5;
+  brickObject.width = canvas.width / 5 - 1; // brick width in canvas
   let newBricks = [];
   if (!bricks) {
     return [];
@@ -26,6 +26,7 @@ export default function Brick(level, bricks, canvas, brickObject) {
       brickObject.y += brickObject.height + 1;
     }
   }
+  console.log(newBricks);
   return newBricks;
 }
 
@@ -38,5 +39,16 @@ class oneBrick {
     this.colors = c;
     this.broke = false;
   }
-  draw(ctx) {}
+  draw(ctx) {
+    ctx.beginPath();
+    ctx.rect(this.x, this.y, this.width, this.height);
+    ctx.fillstyle = this.broke ? "red" : this.colors[1];
+    ctx.strokeStyle = this.broke ? "red" : "red";
+    ctx.linewidth = 5;
+    ctx.fillStyle = this.broke ? "red" : this.colors[1];
+    ctx.shadowBlur = 0;
+    ctx.shadowColor = "black";
+    ctx.strokeRect(this.x, this.y, this.width, this.height);
+    ctx.fill();
+  }
 }

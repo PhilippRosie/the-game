@@ -5,7 +5,7 @@ export default (ctx, canvas, playerProps) => {
       this.y = canvas.height - 30;
       this.height = 20;
       this.width = playerProps.width;
-      this.colors = ["red", "blue"];
+      this.colors = ["red"];
     }
 
     move() {
