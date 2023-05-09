@@ -1,13 +1,33 @@
 import React, { useRef, useEffect } from "react";
 import { BallMovement } from "../components/ballMovement";
-import data from "../components/gameData";
 import "../styles/gameBoard.css";
 import BoardCollision from "../components/boardCollision";
 
-let { ballObject } = data;
-
 export default function GameBoard() {
   const canvasRef = useRef(null);
+
+  let ballObject = {
+    x: 20,
+    y: 200,
+    rad: 20,
+    dx: 2,
+    dy: 2,
+    speed: 10,
+  };
+  let brickobject = {
+    x: 0.5,
+    y: 50,
+    height: 20,
+    density: 2,
+    colors: ["red", "yellow"],
+  };
+  let player = {
+    name: "",
+    lives: 5,
+    score: 0,
+    level: 1,
+  };
+
   useEffect(() => {
     const render = () => {
       const canvas = canvasRef.current;
@@ -23,7 +43,6 @@ export default function GameBoard() {
     };
     render();
   }, []);
-
   return (
     <canvas
       ref={canvasRef}
