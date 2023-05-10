@@ -15,23 +15,21 @@ function App() {
     <>
       <Navbar />
 
-      <div className="page-route">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/game" element={<Game />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/userpage" element={<UserPage />} />
-          <Route
-            path="/user"
-            element={
-              <PrivateRoute>
-                <UserPage />
-              </PrivateRoute>
-            }
-          />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/game" element={<Game />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/userpage" element={<UserPage />} />
+        <Route
+          path="/user"
+          element={
+            <PrivateRoute>
+              <UserPage />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
     </>
   );
 }
