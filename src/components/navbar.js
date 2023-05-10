@@ -4,7 +4,7 @@ import "../styles/navbar.css";
 import "../pages/profile";
 import CreateAcc from "./createAcc";
 import Login from "./login";
-import { authenticate, logout } from "../helpers";
+import { logout } from "../helpers";
 
 import "../pages/game";
 

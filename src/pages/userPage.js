@@ -19,7 +19,7 @@ const UserPage = ({ username }) => {
     <div className="userInfoContainer">
       {user ? (
         <h1>
-          HEY{" "}
+          HEY
           <span className="userName" style={{ marginLeft: "10px" }}>
             {user.username.toUpperCase()}
           </span>
