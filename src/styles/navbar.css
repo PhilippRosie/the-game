@@ -55,3 +55,28 @@ nav a:hover {
   justify-content: center;
   align-items: center;
 }
+
+.logoutBtn {
+  font-size: 16px;
+  font-family: "Press Start 2P", cursive;
+  margin: 0 2rem;
+  color: var(--lightTextColor);
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  border: 2px solid white;
+  padding: 5px;
+  transition: 0.5s;
+}
+
+.logoutBtn:hover {
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  color: black;
+  text-shadow: 2px 2px 5px black;
+  box-shadow: 0 0 10px red, inset 0 0 5px rgb(0, 0, 0), inset 0 0 10px black;
+  background-color: red;
+  transition: 0.5s;
+  padding: 5px;
+}
