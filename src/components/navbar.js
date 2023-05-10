@@ -4,14 +4,21 @@ import "../styles/navbar.css";
 import "../pages/profile";
 import CreateAcc from "./createAcc";
 import Login from "./login";
+import { authenticate, logout } from "../helpers";
 
 import "../pages/game";
 
 export default function Navbar() {
   const [currentForm, setCurrentForm] = useState("login");
+  const [auth, setAuth] = useState(localStorage.getItem("user") !== null);
 
   const toogleForm = (forName) => {
     setCurrentForm(forName);
+  };
+
+  const handleLogout = () => {
+    logout();
+    setAuth(false);
   };
 
   return (
@@ -21,12 +28,17 @@ export default function Navbar() {
         <div className="main-menu">
           <Link to="/">Home</Link>
           <Link to="/game">Game</Link>
+          {auth && <Link to="/userPage">User Page</Link>}
         </div>
         <div className="user-menu">
-          {currentForm === "login" ? (
-            <Login onFormSwitch={toogleForm} />
+          {auth ? (
+            <button onClick={handleLogout} className="logoutBtn">
+              Logout
+            </button>
+          ) : currentForm === "login" ? (
+            <Login onFormSwitch={toogleForm} setAuth={auth} />
           ) : (
-            <CreateAcc onFormSwitch={toogleForm} />
+            <CreateAcc onFormSwitch={toogleForm} setAuth={auth} />
           )}
         </div>
       </nav>

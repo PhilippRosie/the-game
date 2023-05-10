@@ -5,3 +5,7 @@ export const authenticate = () => {
     return false;
   }
 };
+
+export const logout = () => {
+  localStorage.removeItem("user");
+};
