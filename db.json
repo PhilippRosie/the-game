@@ -11,6 +11,12 @@
       "email": "pelle@gmail.com",
       "pass": "123456",
       "id": 2
+    },
+    {
+      "username": "Jonatan Lundmark",
+      "email": "lundmark1223@hotmail.se",
+      "pass": "password",
+      "id": 3
     }
   ],
   "posts": [
