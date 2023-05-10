@@ -42,7 +42,7 @@ export default function GameBoard() {
       const canvas = canvasRef.current;
       const ctx = canvas.getContext("2d");
 
-      // Bricks
+      // newBricks
       let newBrickset = Brick(2, bricks, canvas, brickObject);
       if (newBrickset && newBrickset.length > 0) {
         bricks = newBrickset;
@@ -50,6 +50,7 @@ export default function GameBoard() {
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+      // Draw brickset
       bricks.map((brick) => {
         return brick.draw(ctx);
       });
@@ -58,7 +59,8 @@ export default function GameBoard() {
       BallMovement(ctx, ballObject);
 
       //bricks and ball collision
-      brickCollision(ballObject, brickObject, bricks);
+
+      brickCollision(ballObject, bricks);
 
       // ball and wall collisions
       BoardCollision(ballObject, canvas);
