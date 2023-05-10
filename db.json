@@ -11,6 +11,12 @@
       "email": "pelle@gmail.com",
       "pass": "123456",
       "id": 2
+    },
+    {
+      "username": "kajsa",
+      "email": "kajsa@gmail.com",
+      "pass": "123456",
+      "id": 3
     }
   ],
   "posts": [
