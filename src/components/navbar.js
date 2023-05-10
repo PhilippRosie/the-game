@@ -27,7 +27,7 @@ export default function Navbar() {
       <nav>
         <div className="main-menu">
           <Link to="/">Home</Link>
-          <Link to="/game">Game</Link>
+          {auth && <Link to="/game">Game</Link>}
           {auth && <Link to="/userPage">User Page</Link>}
         </div>
         <div className="user-menu">
