@@ -1,5 +1,5 @@
 export default function Brick(level, bricks, canvas, brickObject) {
-  brickObject.width = canvas.width / 10 - 1; // brick width in canvas
+  brickObject.width = canvas.width / 5 - 1; // brick width in canvas
   let newBricks = [];
   if (!bricks) {
     return [];
@@ -10,9 +10,9 @@ export default function Brick(level, bricks, canvas, brickObject) {
   }
 
   //brick formation
-  for (let i = 0; i < 20 * level; i++) {
+  for (let i = 0; i < 5 * level; i++) {
     let newBrick = new oneBrick(
-      brickObject.x,
+      brickObject.x + 2.5, // center the bricks
       brickObject.y,
       brickObject.width - 5, // space between
       brickObject.height - 5, // space between
@@ -32,7 +32,7 @@ export default function Brick(level, bricks, canvas, brickObject) {
 
 class oneBrick {
   constructor(x, y, w, h, c) {
-    this.x = x + 2.5; // center the bricks
+    this.x = x;
     this.y = y;
     this.width = w;
     this.height = h;
