@@ -35,6 +35,10 @@ export default function GameBoard() {
   // render to canvas!
   useEffect(() => {
     const render = () => {
+      if (canvasRef.current == null) {
+        // removed error of Null when going back too Home
+        return;
+      }
       const canvas = canvasRef.current;
       const ctx = canvas.getContext("2d");
 
@@ -54,6 +58,7 @@ export default function GameBoard() {
       BallMovement(ctx, ballObject);
 
       //bricks and ball collision
+      brickCollision(ballObject, brickObject, bricks);
 
       // ball and wall collisions
       BoardCollision(ballObject, canvas);
