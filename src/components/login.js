@@ -38,6 +38,7 @@ const Login = (props) => {
       navigate("/userpage");
 
       localStorage.setItem("user", JSON.stringify(user.id));
+      window.location.reload();
     }
     setEmail("");
     setPass("");
