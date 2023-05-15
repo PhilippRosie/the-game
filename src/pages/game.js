@@ -1,11 +1,12 @@
 import React from "react";
-import "../styles/game.css";
-import Board from "../components/gameBoard";
+import GameBuild from "../components/gameBuild";
 
-export default function Game() {
+const game = () => {
   return (
     <div>
-      <Board />
+      <GameBuild />
     </div>
   );
-}
+};
+
+export default game;
