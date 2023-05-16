@@ -12,8 +12,8 @@ const GameBuild = () => {
   const makeHead = () => {
     const gameHead = {
       id: heads.length + 1,
-      top: Math.random() * 500,
-      left: Math.random() * 500,
+      top: Math.random() * 400,
+      left: Math.random() * 700,
     };
     setHeads([gameHead]);
   };
