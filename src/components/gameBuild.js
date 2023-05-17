@@ -21,6 +21,7 @@ const GameBuild = () => {
   const removeHead = (id) => {
     setHeads(heads.filter((head) => head.id !== id));
     setClickedHeads(clickedHeads + 1);
+    setTimeLeft((addedTime) => addedTime + 1);
     makeHead();
   };
 
