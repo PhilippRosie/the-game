@@ -25,6 +25,10 @@ const GameBuild = () => {
     makeHead();
   };
 
+  const removeTime = () => {
+    setTimeLeft((decTime) => decTime - 0.5);
+  };
+
   const startBtn = () => {
     makeHead();
     setStartGame(true);
@@ -57,7 +61,7 @@ const GameBuild = () => {
   };
 
   return (
-    <div className="gameContainer">
+    <div className="gameContainer" onClick={removeTime}>
       <div>
         <div className="gameHeading">
           <p className="smashHeads">Smashed Trumps:{clickedHeads} </p>
