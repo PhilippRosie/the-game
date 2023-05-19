@@ -13,7 +13,7 @@ export default function Home() {
     <div className="home-content">
       <button className="Game-btn" onClick={() => setShowModal(true)}>
         {auth ? (
-          <Link to="/game">Let's Play!</Link>
+          <Link to="/game">Let's PLAY!</Link>
         ) : (
           <Link to="/login">Login to PLAY!</Link>
         )}
