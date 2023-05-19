@@ -38,7 +38,8 @@ h2 {
   align-items: center;
   margin-bottom: 5%;
   font-size: 48px;
-  font-family: "Alumni Sans", sans-serif;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
   color: black;
   text-shadow: 0 0 3px red;
 }
@@ -79,8 +80,8 @@ input:focus::placeholder {
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  font-size: 20px;
-  font-family: "Alumni Sans", sans-serif;
+  font-size: 14px;
+  font-family: "Press Start 2P", cursive;
   color: rgb(146, 0, 0);
   background-color: black;
   box-shadow: 0 0 5px darkred, 0 0 10px red, inset 0 0 5px darkred;
