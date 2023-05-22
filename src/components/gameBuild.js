@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "../styles/gameBuild.css";
 
 const GameBuild = () => {
@@ -9,14 +9,14 @@ const GameBuild = () => {
   const [timeLeft, setTimeLeft] = useState(20);
   const [gameOver, setGameOver] = useState(false);
 
-  const makeHead = () => {
+  const makeHead = useCallback(() => {
     const gameHead = {
       id: heads.length + 1,
       top: Math.random() * 400,
       left: Math.random() * 700,
     };
     setHeads([gameHead]);
-  };
+  }, [heads.length]);
 
   const removeHead = (id) => {
     setHeads(heads.filter((head) => head.id !== id));
@@ -37,6 +37,7 @@ const GameBuild = () => {
 
   useEffect(() => {
     let countDown;
+    let changeHeadPosition;
 
     if (startGame) {
       timeLeft > 0
@@ -44,12 +45,17 @@ const GameBuild = () => {
             setTimeLeft((timeBefore) => timeBefore - 1);
           }, 1000))
         : setGameOver(true);
+
+      changeHeadPosition = setInterval(() => {
+        makeHead();
+      }, 1000);
     }
 
     return () => {
       clearInterval(countDown);
+      clearInterval(changeHeadPosition);
     };
-  }, [timeLeft, startGame]);
+  }, [timeLeft, startGame, makeHead]);
 
   const reloadGame = () => {
     setHeads([]);
