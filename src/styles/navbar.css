@@ -1,8 +1,43 @@
 .logo {
-  padding: 10px;
-  color: var(--lightTextColor);
+  position: relative;
+  padding: 9px;
+  color: #dd1717;
   font-family: "Press Start 2P", cursive;
   font-size: 32px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #dd171755);
+  line-height: 0.2em;
+  outline: none;
+  animation: lightFlimmer 3s linear infinite;
+}
+
+@keyframes lightFlimmer {
+  0%,
+  18%,
+  20%,
+  24.1%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: #ff3d3d;
+    text-shadow: none;
+  }
+  18.1%,
+  20.1%,
+  24%,
+  30%,
+  50%,
+  60.1%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
+    color: #fddfdf;
+    text-shadow: 0 0 10px #ef2121, 0 0 20px #ef2121, 0 0 40px #ef2121,
+      0 0 80px #ef2121, 0 0 160px #ef2121;
+  }
 }
 
 header {
