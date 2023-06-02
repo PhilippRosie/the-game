@@ -83,6 +83,20 @@
   transition: 0.5s ease-in-out;
 }
 
+.baamImage {
+  position: absolute;
+  transform: translateY(-40px) translateX(-5px) rotate(45deg);
+  width: 100px;
+  height: 100px;
+}
+
+.missedImage {
+  position: absolute;
+  transform: translateY(-70px) translateX(-50px);
+  width: 100px;
+  height: 100px;
+}
+
 .overlay {
   width: 100%;
   height: 100%;
